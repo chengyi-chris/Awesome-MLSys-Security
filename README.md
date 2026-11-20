@@ -28,50 +28,20 @@ A curated list of research papers, defenses, and real-world CVEs focusing on **L
 ## 1. KV Cache & Memory Management Security
 
 ### Prefix Caching Side-Channels
-- **[NDSS 2025]** *PromptPeek: Prompt Leakage via KV-Cache Sharing in Multi-Tenant LLM Serving* [[Paper](https://arxiv.org/abs/2411.09218)]
+- **[USENIX 2026]** *HijackKV: New Threat in Position-Independent KV Cache Reuse* [[Paper](https://arxiv.org/abs/2607.19957)]
+- **[NDSS 2026]** *Shadow in the Cache: Unveiling and Mitigating Privacy Risks of KV-cache in LLM Inference* [[Paper](https://www.ndss-symposium.org/wp-content/uploads/2026-f258-paper.pdf)]
+- **[NDSS 2025]** *I Know What You Asked: Prompt Leakage via KV-Cache Sharing in Multi-Tenant LLM Serving* [[Paper](https://www.ndss-symposium.org/wp-content/uploads/2025-1772-paper.pdf)]
   - `Target: Prefix Caching` | `Attack: Timing & Scheduling Side-Channel` | `System: vLLM / SGLang`
-- **[arXiv 2024]** *InputSnatch: Stealing Input in LLM Services via Timing Side-Channel Attacks* [[Paper](https://arxiv.org/abs/2411.18191)]
-  - `Target: Prefix & Semantic Caching` | `Attack: Timing Side-Channel` | `System: vLLM / GPTCache`
-
+  
 ### Memory Exhaustion & Preemption DoS
-- **[NeurIPS 2026]** *Fill and Squeeze: Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model*
+- **[NeurIPS 2026]** *Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model* [[Paper](https://arxiv.org/abs/2602.07878)]
   - `Target: PagedAttention & Scheduler` | `Attack: Preemption & Latency DoS` | `System: vLLM`
-
-### Cache Isolation & Defenses
-- **[arXiv 2026]** *PrefixWall / KVGov: Selective KV Cache Isolation for Multi-Tenant LLM Serving*
-  - `Target: Prefix Caching` | `Defense: Dynamic Tenant Isolation`
-
+- **[ICML 2025]** *Auditing Prompt Caching in Language Model APIs* [[Paper](https://arxiv.org/abs/2502.07776)]
+  
 ---
 
-## 2. Scheduling & Decoding Dynamics
-- **[ICLR 2026]** *Side Channels via Speculative Decoding in LLMs*
-  - `Target: Speculative Decoding` | `Attack: Encrypted Packet Timing/Size Analysis`
-
----
-
-## 3. Quantization & Kernel-Level Security
-- *Quantization-Aware Backdoors in Low-Bit LLM Inference (FP8 / INT4)* — *(To be populated)*
-
----
-
-## 4. Disaggregated & Distributed Serving Security
-- *Inter-Node KV Cache Tampering & Eavesdropping in Prefill-Decode Disaggregated Serving* — *(To be populated)*
-
----
-
-## 5. Multimodal Serving Pipeline Security
-- *Media Decoder Memory Corruption in Vision-Language Model Serving* — *(To be populated)*
-
----
-
-## 6. Hardware-Assisted Confidential Inference
-- *TEE / Confidential GPU Overhead & Isolation in LLM Serving* — *(To be populated)*
-
----
-
-## 7. Notable CVEs & Real-World Advisories
-- **[CVE-2026-22778]** *(CVSS 9.8)* — Remote Code Execution via ASLR leak and JPEG2000 heap buffer overflow in vLLM multimodal video processing.
-- **[Insecure Deserialization]** — RCE vulnerabilities in distributed vLLM deployments via unauthenticated ZeroMQ / `pickle` tensor serialization endpoints.
+## 2. Speculative Decoding
+- **[IEEE S&P 2027]** *Secure Speculative Decoding for Large Language Models* [[Paper](https://arxiv.org/abs/2610.08678v2)]
 
 ---
 
