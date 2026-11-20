@@ -14,14 +14,8 @@ A curated list of research papers, defenses, and real-world CVEs focusing on **L
 - [1. KV Cache & Memory Management Security](#1-kv-cache--memory-management-security)
   - [Prefix Caching Side-Channels](#prefix-caching-side-channels)
   - [Memory Exhaustion & Preemption DoS](#memory-exhaustion--preemption-dos)
-  - [Cache Isolation & Defenses](#cache-isolation--defenses)
-- [2. Scheduling & Decoding Dynamics](#2-scheduling--decoding-dynamics)
-- [3. Quantization & Kernel-Level Security](#3-quantization--kernel-level-security)
-- [4. Disaggregated & Distributed Serving Security](#4-disaggregated--distributed-serving-security)
-- [5. Multimodal Serving Pipeline Security](#5-multimodal-serving-pipeline-security)
-- [6. Hardware-Assisted Confidential Inference](#6-hardware-assisted-confidential-inference)
-- [7. Notable CVEs & Real-World Advisories](#7-notable-cves--real-world-advisories)
-- [Contributing](#contributing)
+- [2. Speculative Decoding](#2-speculative-decoding)
+
 
 ---
 
