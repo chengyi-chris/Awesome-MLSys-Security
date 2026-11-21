@@ -3,9 +3,11 @@
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-A curated list of research papers, defenses, and real-world vulnerabilities on **security and privacy in machine learning systems**, with a particular focus on **LLM inference and serving**. Topics include KV cache management, speculative decoding, multi-tenant isolation, resource scheduling, distributed ML, and the ML systems supply chain.
+A curated list of **peer-reviewed conference and journal papers** on security and privacy in machine learning systems, with a particular focus on **LLM inference and serving**. Topics include KV cache management, speculative decoding, multi-tenant isolation, resource scheduling, distributed ML, and the ML systems supply chain.
 
 > **Scope:** This repository focuses on security issues arising from the **design, implementation, optimization, and deployment of ML systems**. General-purpose LLM jailbreaks, prompt injection, and alignment research are included only when they expose a concrete systems-level attack surface or defense.
+>
+> **Publication policy:** Only papers **accepted to or published in peer-reviewed conferences or journals** are included. **arXiv-only preprints, submissions under review, and unverified venue claims are excluded.** Accepted papers awaiting publication may be listed with their confirmed venue and year. A paper hosted on arXiv is eligible if its peer-reviewed acceptance is independently verifiable.
 
 ## Contents
 
@@ -41,7 +43,7 @@ Security and privacy risks in the mechanisms used to execute and optimize model 
 
 ### Speculative Decoding Security
 
-- **[IEEE S&P 2027]** *Secure Speculative Decoding for Large Language Models* [[Paper](https://arxiv.org/abs/2610.08678v2)]
+- **[IEEE S&P 2027, to appear]** *Secure Speculative Decoding for Large Language Models* [[Paper](https://arxiv.org/abs/2610.08678)] [[Code](https://github.com/YichiCS/Secure-Speculative-Decoding)]
 
 ### Attention & Inference Optimization
 
@@ -59,22 +61,33 @@ Security risks introduced by serving frameworks, caching policies, resource shar
 
 ### Multi-Tenant Isolation
 
-- **[USENIX 2026]** *HijackKV: New Threat in Position-Independent KV Cache Reuse* [[Paper](https://arxiv.org/abs/2607.19957)]
+- **[USENIX Security 2026]** *Behind Bars: A Side-Channel Attack on NVIDIA MIG Cache Partitioning Using Memory Barriers* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/gu-cheng)]
+  - `Target: NVIDIA MIG GPU cache isolation` | `Attack: Cross-instance side channel`
+- **[USENIX Security 2026]** *TIMESLICE-SANDWICH: A GPU Side-Channel Attack Exploiting Time-Sliced Scheduling* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/kim-hodong)]
+  - `Target: Shared GPU scheduling` | `Attack: Time-slicing side channel`
+- **[USENIX 2026]** *HijackKV: New Threat in Position-Independent KV Cache Reuse* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-yichi)]
 
 ### Cache Poisoning
 
-*Papers to be added.*
+- **[NDSS 2026]** *Cache Me, Catch You: Cache Related Security Threats in LLM Serving Frameworks* [[Paper](https://www.ndss-symposium.org/ndss-paper/cache-me-catch-you-cache-related-security-threats-in-llm-serving-frameworks/)]
+  - `Target: LLM serving caches` | `Attack: Cache-related integrity and security threats`
+- **[NDSS 2026]** *When Cache Poisoning Meets LLM Systems: Semantic Cache Poisoning and Its Countermeasures* [[Paper](https://www.ndss-symposium.org/ndss-paper/when-cache-poisoning-meets-llm-systems-semantic-cache-poisoning-and-its-countermeasures/)]
+  - `Target: Semantic caching` | `Attack: Cache poisoning` | `Defense: Countermeasures`
 
 ### Scheduling & Resource Exhaustion
 
-- **[NeurIPS 2026]** *Rethinking Latency Denial-of-Service: Attacking the LLM Serving Framework, Not the Model* [[Paper](https://arxiv.org/abs/2602.07878)]
+- **[NeurIPS 2026]** *Rethinking Latency Denial-of-Service: Attack the LLM Serving Framework, Not the Model* [[Paper](https://arxiv.org/abs/2602.07878)]
   - `Target: PagedAttention & Scheduler` | `Attack: Preemption & Latency DoS` | `System: vLLM`
 
 ### Side-Channel Attacks
 
+- **[USENIX Security 2026]** *From Length to Content: Token-Length Side-Channel Attacks on LLM API Merged Outputs* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/li-sijia)]
+  - `Target: LLM API response streaming` | `Attack: Encrypted-traffic side channel`
+- **[USENIX Security 2025]** *I Know What You Said: Unveiling Hardware Cache Side-Channels in Local Large Language Model Inference* [[Paper](https://www.usenix.org/conference/usenixsecurity25/presentation/gao-zibo)]
+  - `Target: Local LLM inference / hardware cache` | `Attack: Cache side channel`
 - **[NDSS 2025]** *I Know What You Asked: Prompt Leakage via KV-Cache Sharing in Multi-Tenant LLM Serving* [[Paper](https://www.ndss-symposium.org/wp-content/uploads/2025-1772-paper.pdf)]
   - `Target: Prefix Caching` | `Attack: Timing & Scheduling Side-Channel` | `System: vLLM / SGLang`
-- **[ICML 2025]** *Auditing Prompt Caching in Language Model APIs* [[Paper](https://arxiv.org/abs/2502.07776)]
+- **[ICML 2025]** *Auditing Prompt Caching in Language Model APIs* [[Paper](https://proceedings.mlr.press/v267/gu25b.html)]
 
 ---
 
@@ -84,11 +97,15 @@ Security of distributed training and inference, including cross-node communicati
 
 ### Distributed Training
 
-*Papers to be added.*
+- **[OSDI 2026]** *Safeguarding LLM Training at Scale: Online SDC Detection and Insights from 35 Million GPU Hours* [[Paper](https://www.usenix.org/conference/osdi26/presentation/lei)]
+  - `Target: Large-scale GPU training` | `Focus: Silent data corruption detection / reliability`
 
 ### Distributed Inference
 
-*Papers to be added.*
+- **[ISPASS 2026]** *An Empirical Study of LLM Serving in Confidential GPUs* [[Paper](https://ieeexplore.ieee.org/abstract/document/11527301)]
+  - `Target: Confidential GPU-based LLM serving` | `Focus: Security-performance overhead`
+- **[IISWC 2025]** *Confidential LLM Inference: Performance and Cost Across CPU and GPU TEEs* [[Paper](https://spcl.ethz.ch/Publications/index.php?pub=561)]
+  - `Target: CPU and GPU trusted execution environments` | `Focus: Confidential inference / performance`
 
 ### Communication Security
 
@@ -102,11 +119,17 @@ Security of the artifacts, dependencies, and runtime components used to load, ex
 
 ### Model Serialization
 
-*Papers to be added.*
+- **[ACM CCS 2025]** *PickleBall: Secure Deserialization of Pickle-based Machine Learning Models* [[Paper](https://www.cs.columbia.edu/~junfeng/papers/pickleball-ccs25.pdf)] [[Code](https://github.com/columbia/pickleball)]
+  - `Target: Pickle-based ML model loading` | `Defense: Secure deserialization`
+- **[USENIX Security 2026]** *The Art of Hide and Seek: Making Pickle-Based Model Supply Chain Poisoning Stealthy Again* [[Paper](https://www.usenix.org/conference/usenixsecurity26/cycle1-accepted-papers)]
+  - `Target: Pickle model artifacts and scanners` | `Attack: Stealthy supply-chain poisoning`
 
 ### Model Loading & Deployment
 
-*Papers to be added.*
+- **[USENIX Security 2025]** *From Purity to Peril: Backdooring Merged Models From "Harmless" Benign Components* [[Paper](https://www.usenix.org/conference/usenixsecurity25/presentation/wang-lijin)]
+  - `Target: Model merging pipeline` | `Attack: Backdoored model components`
+- **[ICML 2025, position paper]** *Position: Machine Learning Models Have a Supply Chain Problem* [[Paper](https://proceedings.mlr.press/v267/meiklejohn25a.html)]
+  - `Target: ML model distribution and provenance` | `Focus: Supply-chain risks`
 
 ### Runtime & Framework Security
 
@@ -116,13 +139,16 @@ Security of the artifacts, dependencies, and runtime components used to load, ex
 
 ## Contributing
 
-Contributions are welcome! Please open a **Pull Request** to suggest a relevant research paper, defense, or real-world vulnerability, or open an **Issue** for discussion.
+Contributions are welcome! Please open a **Pull Request** to suggest an eligible peer-reviewed conference or journal paper, or an **Issue** for discussion.
 
 To help keep the list consistent:
 
+- Submit papers **accepted to or published in a peer-reviewed conference or journal**; include a verifiable official venue, proceedings, or acceptance source.
+- **Do not submit arXiv-only preprints, under-review manuscripts, or unverified acceptances.** Workshop papers are excluded unless the maintainers explicitly approve them.
 - Submit work with a clear **ML systems component** and **security or privacy implication**.
 - Add each paper to its **primary category**; avoid duplicate entries across sections.
 - Use the format `**[Venue Year]** *Paper Title* [[Paper](URL)]` and optionally include a code link.
 - When useful, add a short metadata line with `Target`, `Attack` or `Defense`, and `System`.
-- Prefer publisher or official proceedings links; use arXiv links when appropriate.
+- Prefer publisher, conference, or official proceedings links. Use an arXiv link only when the paper has a verified conference/journal acceptance and no official full-text link is available yet.
+- For accepted but not-yet-published papers, label them **[Venue Year, to appear]**.
 
