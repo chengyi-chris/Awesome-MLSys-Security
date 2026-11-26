@@ -11,7 +11,7 @@ A curated list of **peer-reviewed conference and journal papers** on security an
 
 ## Contents
 
-- [Venue Priorities & Inclusion Criteria](#venue-priorities--inclusion-criteria)
+- [Paper Selection Criteria](#paper-selection-criteria)
 - [1. LLM Inference Security](#1-llm-inference-security)
   - [KV Cache Security](#kv-cache-security)
   - [Speculative Decoding Security](#speculative-decoding-security)
@@ -34,25 +34,13 @@ A curated list of **peer-reviewed conference and journal papers** on security an
 
 ---
 
-## Venue Priorities & Inclusion Criteria
+## Paper Selection Criteria
 
-The following venues are **priority discovery sources** for manually triggered paper-list updates, not automatic admission criteria:
+We prioritize **ML systems security** research published in CORE/ICORE A*/A conferences or other maintainer-approved high-quality peer-reviewed conferences and journals.
 
-| Area | Priority conferences |
-| --- | --- |
-| Security & Privacy | IEEE Symposium on Security and Privacy (IEEE S&P), USENIX Security, ACM CCS, NDSS |
-| Operating & General Systems | SOSP, OSDI, EuroSys, ASPLOS, USENIX ATC |
-| ML & Distributed Systems | MLSys, NSDI, SoCC, PPoPP |
-| Computer Architecture | ISCA, MICRO, HPCA |
+Papers must study a **concrete security or privacy issue arising from ML system design, optimization, or deployment**. Only accepted or published papers are eligible; arXiv-only and workshop-only works are excluded.
 
-**Every new paper must satisfy both requirements:**
-
-1. **Venue quality and publication status:** The conference must be ranked **CORE/ICORE A\* or A** in the applicable ranking edition, or the paper must appear in another **high-quality peer-reviewed conference or journal explicitly approved by the maintainers**. Verify the venue and ranking using the [official CORE/ICORE conference rankings](https://portal.core.edu.au/conf-ranks/) when applicable, plus official conference proceedings, publisher records, or an official acceptance announcement. CORE conference rankings do not apply to journals; journal quality must be assessed separately. Appearing in a priority venue does **not** bypass this check.
-2. **Direct MLSys Security relevance:** The paper must identify and study a concrete security or privacy issue tied to an ML systems component (e.g., inference runtimes, KV caches, serving schedulers, distributed training/inference, GPU isolation, deployment frameworks, or model supply-chain infrastructure). A systems-performance paper without a security/privacy contribution, or generic model-level jailbreak/alignment work without a specific systems attack surface, is not eligible.
-
-Only **accepted or published** full conference/journal papers are eligible; arXiv-only manuscripts, works under review, unverifiable venue claims, and workshop-only papers are excluded by default. Acceptance for a future venue may be included as *to appear* once independently verified.
-
-**Manual update workflow:** Read the latest `main` README; search priority venues and other eligible sources; verify venue/ranking, acceptance, systems-security contribution, and official links; remove duplicates; propose additions through a **Draft Pull Request** on a separate branch. Do not directly update or merge `main`. In the PR description, summarize newly added papers and explain any excluded or borderline candidates.
+See [Contribution Guidelines](CONTRIBUTING.md) for priority venues, detailed eligibility criteria, and the manual update workflow.
 
 ---
 
@@ -170,16 +158,4 @@ Security of the artifacts, dependencies, and runtime components used to load, ex
 
 ## Contributing
 
-Contributions are welcome! Please open a **Pull Request** to suggest an eligible peer-reviewed conference or journal paper, or an **Issue** for discussion.
-
-To help keep the list consistent:
-
-- Submit papers only if they meet **both** the [venue-quality and direct MLSys-security relevance criteria](#venue-priorities--inclusion-criteria), with verifiable official proceedings or acceptance evidence.
-- **Do not submit arXiv-only preprints, under-review manuscripts, or unverified acceptances.** Workshop papers are excluded unless the maintainers explicitly approve them.
-- Submit work with a clear **ML systems component** and **security or privacy implication**.
-- Add each paper to its **primary category**; avoid duplicate entries across sections.
-- Use the format `**[Venue Year]** *Paper Title* [[Paper](URL)]` and optionally include a code link.
-- When useful, add a short metadata line with `Target`, `Attack` or `Defense`, and `System`.
-- Prefer publisher, conference, or official proceedings links. Use an arXiv link only when the paper has a verified conference/journal acceptance and no official full-text link is available yet.
-- For accepted but not-yet-published papers, label them **[Venue Year, to appear]**.
-
+Contributions are welcome! Please read the [Contribution Guidelines](CONTRIBUTING.md) before suggesting papers via Pull Request or Issue.
