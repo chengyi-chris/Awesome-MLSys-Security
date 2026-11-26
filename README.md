@@ -47,11 +47,13 @@ Security and privacy risks in the mechanisms used to execute and optimize model 
 
 ### Attention & Inference Optimization
 
-*Papers to be added.*
+- **[USENIX Security 2025]** *Activation Approximations Can Incur Safety Vulnerabilities in Aligned LLMs: Comprehensive Analysis and Defense* [[Paper](https://www.usenix.org/conference/usenixsecurity25/presentation/zhang-jiawen)]
+  - `Target: LLM activation approximation for efficient inference` | `Attack/Impact: Safety degradation after polynomialization, sparsification, or quantization` | `Defense: QuadA`
 
 ### Model Compression & Quantization
 
-*Papers to be added.*
+- **[USENIX Security 2026]** *CompLeak: Deep Learning Model Compression Exacerbates Privacy Leakage* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/li-na)]
+  - `Target: Pruning, quantization, and weight clustering in deployed ML models` | `Attack: Membership inference / privacy leakage across compressed model versions`
 
 ---
 
