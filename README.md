@@ -81,6 +81,8 @@ Security risks introduced by serving frameworks, caching policies, resource shar
 
 ### Side-Channel Attacks
 
+- **[NDSS 2026]** *Peering Inside the Black-Box: Long-Range and Scalable Model Architecture Snooping via GPU Electromagnetic Side-Channel* [[Paper](https://www.ndss-symposium.org/ndss-paper/peering-inside-the-black-box-long-range-and-scalable-model-architecture-snooping-via-gpu-electromagnetic-side-channel/)]
+  - `Target: DNN inference on GPUs` | `Attack: Electromagnetic side-channel model architecture extraction`
 - **[USENIX Security 2026]** *From Length to Content: Token-Length Side-Channel Attacks on LLM API Merged Outputs* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/li-sijia)]
   - `Target: LLM API response streaming` | `Attack: Encrypted-traffic side channel`
 - **[USENIX Security 2025]** *I Know What You Said: Unveiling Hardware Cache Side-Channels in Local Large Language Model Inference* [[Paper](https://www.usenix.org/conference/usenixsecurity25/presentation/gao-zibo)]
@@ -102,6 +104,10 @@ Security of distributed training and inference, including cross-node communicati
 
 ### Distributed Inference
 
+- **[USENIX Security 2026]** *SMASH: Scalable Maliciously Secure Hybrid Multi-party Computation Framework for Privacy-Preserving Large Language Models* [[Paper](https://www.usenix.org/conference/usenixsecurity26/presentation/lv)]
+  - `Target: Distributed privacy-preserving LLM inference` | `Defense: Maliciously secure hybrid multi-party computation`
+- **[USENIX Security 2025]** *Depth Gives a False Sense of Privacy: LLM Internal States Inversion* [[Paper](https://www.usenix.org/conference/usenixsecurity25/presentation/dong-tian)]
+  - `Target: Intermediate states in collaborative LLM inference` | `Attack: Input reconstruction / privacy leakage`
 - **[ISPASS 2026]** *An Empirical Study of LLM Serving in Confidential GPUs* [[Paper](https://ieeexplore.ieee.org/abstract/document/11527301)]
   - `Target: Confidential GPU-based LLM serving` | `Focus: Security-performance overhead`
 - **[IISWC 2025]** *Confidential LLM Inference: Performance and Cost Across CPU and GPU TEEs* [[Paper](https://spcl.ethz.ch/Publications/index.php?pub=561)]
